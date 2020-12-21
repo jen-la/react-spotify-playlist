@@ -1,14 +1,5 @@
-/* bring in normalize.css styles */
-@import-normalize;
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
-
-/* body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
 
 * {
   font-family: 'Poppins', 'Work Sans', sans-serif;
