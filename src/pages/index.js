@@ -1,1 +1,0 @@
-export { default as ExamplePage } from './ExamplePage/ExamplePage';
