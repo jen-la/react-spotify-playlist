@@ -1,6 +1,7 @@
 import React from 'react';
 import Favicon from 'react-favicon';
 import { SearchBar, SearchResults, Playlist } from './components';
+import { Spotify } from './util/Spotify';
 import './App.css';
 
 class App extends React.Component {
@@ -8,50 +9,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       viewportWidth: window.innerWidth,
-      searchResults: [
-        { 
-          id: 1,
-          name: 'Umbrella', 
-          artist: 'Rhianna', 
-          album: 'Unknown'
-        },
-        { 
-          id: 2,
-          name: 'Circles', 
-          artist: 'Post Malone', 
-          album: 'Unknown'
-        },
-        { 
-          id: 3,
-          name: 'Dynamite', 
-          artist: 'BTS', 
-          album: 'Unknown'
-        }
-      ],
+      searchResults: [],
       playlistName: 'Jen\'s special mix',
-      playlistTracks: [
-        { 
-          id: 4,
-          name: 'Jet Plane', 
-          artist: 'Angus and Julia Stone', 
-          album: 'Unknown',
-          uri: ''
-        },
-        {
-          id: 2,
-          name: 'Circles', 
-          artist: 'Post Malone', 
-          album: 'Unknown',
-          uri: ''
-        },
-        {
-          id: 3,
-          name: 'Dynamite', 
-          artist: 'BTS', 
-          album: 'Unknown',
-          uri: ''
-        }
-      ],
+      playlistTracks: [],
     };
   }
   
@@ -85,13 +45,21 @@ class App extends React.Component {
     this.setState({ playlistName: name});
   };
 
-  savePlaylist = () => {
+  savePlaylist = (name, arrayURIs) => {
     const trackURIs = this.state.playlistTracks.map(track => track.uri);
-    // return trackURIs; 
+    Spotify.savePlaylist(this.state.playlistName, trackURIs).then(() => {
+      this.setState({ 
+        playlistName: 'New Playlist',
+        playlistTracks: []
+      });
+    });
   };
 
-  search = (searchTerm) => {
-    console.log(searchTerm);
+  search = (term) => {
+    Spotify.search(term)
+      .then(searchResults => {
+        this.setState({ searchResults: searchResults });
+      });
   };
 
   render = () => {
