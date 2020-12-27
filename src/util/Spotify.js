@@ -1,5 +1,5 @@
 const clientId = process.env.REACT_APP_CLIENT_ID;
-const redirectURI = 'http://localhost:3000/';
+const redirectURI = 'https://jammmingwithjen.surge.sh';
 
 let accessToken;
 
