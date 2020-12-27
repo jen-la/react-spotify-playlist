@@ -2,7 +2,7 @@
 
 ## About the project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and completed as part of [Codecademy](https://www.codecademy.com) Pro's full-stack engineer career path.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and completed as part of [Codecademy Pro's](https://www.codecademy.com) full-stack engineer career path.
 
 The app connects to the Spotify API and allows users to: 
 
@@ -12,9 +12,11 @@ The app connects to the Spotify API and allows users to:
 
 ## Getting started
 
-Try the app live [here](https://jammmingwithjen.surge.sh/).
+Try the app live [here](https://jammmingwithjen.surge.sh/). 
 
-Alternatively, you can clone this repository and run the available scripts below.
+1. Enter a search term (e.g. artist name) and click **'Search'**.
+2. Add any song appearing under the 'Results' column to your new playlist by clicking **'+'**. Remove any song from your playlist by clicking **'-'**.
+3. Rename your playlist by clicking on 'New Playlist' and click 'Save to Spotify' when done adding songs. You will be asked to connect your Spotify account and your new playlist will be visible in your account.
 
 ## Available Scripts
 
